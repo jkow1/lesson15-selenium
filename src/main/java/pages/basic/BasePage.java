@@ -10,8 +10,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
-import java.util.Random;
 
 @Slf4j
 public class BasePage {
@@ -32,53 +30,17 @@ public class BasePage {
         PageFactory.initElements(new DefaultElementLocatorFactory(element), this);
     }
 
-    public String getWebElementText(WebElement element) {
-        String text = element.getText();
-        log.info("Element text: {}", text);
-        return text;
-    }
-
     public void clickOnBtn(WebElement element) {
         log.info("Clicking on {}", element.getText());
         element.click();
     }
 
-    public void moveMouseOver(WebElement element){
-        log.info("Moving mouse over {}",element.getText());
+    public void moveMouseOver(WebElement element) {
+        log.info("Moving mouse over {}", element.getText());
         actions.moveToElement(element).perform();
-    }
-
-    public void sendKeys(WebElement element, String keys) {
-        log.info("Typing: {}", keys);
-        element.sendKeys(keys);
-    }
-
-    public void sendKeysWithClear(WebElement element, String keys) {
-        element.clear();
-        sendKeys(element, keys);
-    }
-
-    public WebElement getRandomElementFromList(List<WebElement> list) {
-        return list.get(new Random(System.currentTimeMillis()).nextInt(list.size()));
     }
 
     public void waitToBeVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
-    public void returnToPrevSite() {
-        driver.navigate().back();
-    }
-
-    public void waitToBeInvisible(WebElement element) {
-        wait.until(ExpectedConditions.invisibilityOf(element));
-    }
-
-    public boolean elementIsVisible(WebElement element) {
-        return element.isDisplayed();
-    }
-
-    public boolean elementIsPresent(List<WebElement> element) {
-        return element.size() > 0;
     }
 }

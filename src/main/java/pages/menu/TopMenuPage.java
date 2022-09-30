@@ -17,17 +17,17 @@ public class TopMenuPage extends BasePage {
     @FindBy(css = ".submenu-container a[title='Blouses']")
     private WebElement blousesSubCatBtn;
 
-    public TopMenuPage moveMouseOverWomenBtn(){
+    public TopMenuPage moveMouseOverWomenBtn() {
         moveMouseOver(womenMenuBtn);
         return this;
     }
 
-    public TopMenuPage waitToBlousesBtnVisible(){
+    public TopMenuPage waitToBlousesBtnVisible() {
         waitToBeVisible(blousesSubCatBtn);
         return this;
     }
 
-    public TopMenuPage clickOnBlousesBtn(){
+    public TopMenuPage clickOnBlousesBtn() {
         clickOnBtn(blousesSubCatBtn);
         return this;
     }

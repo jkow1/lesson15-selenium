@@ -19,11 +19,7 @@ public class ProductGridPage extends BasePage {
     @FindBy(css = ".center_column .cat-name")
     private WebElement productsCatName;
 
-    public ProductPage getFirstProduct(){
-        return new ProductPage(driver, productsListGrid.get(0));
-    }
-
-    public ProductGridPage waitToProductsCatNameVisible(){
+    public ProductGridPage waitToProductsCatNameVisible() {
         waitToBeVisible(productsCatName);
         return this;
     }

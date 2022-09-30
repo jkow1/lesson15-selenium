@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import pages.basic.BasePage;
 
 import java.util.List;
+
 @Slf4j
 public class ProductPopUpPage extends BasePage {
 
@@ -21,23 +22,24 @@ public class ProductPopUpPage extends BasePage {
     private WebElement productPopUpIframe;
 
 
-    public void moveOnProductThumb(int i){
+    public void moveOnProductThumb(int i) {
         moveMouseOver(thumbsImageList.get(i));
     }
 
-    public boolean isThisThumbIsDisplayed(int i){
+    public boolean isThisThumbIsDisplayed(int i) {
         return thumbsImageList.get(i).getAttribute("class").contains("fancybox shown");
     }
 
-    public void waitToPopUpVisible(){
+    public ProductPopUpPage waitToPopUpVisible() {
         waitToBeVisible(productPopUpIframe);
+        return this;
     }
 
-    public int getThumbsImageListSize(){
+    public int getThumbsImageListSize() {
         return thumbsImageList.size();
     }
 
-    public void switchToIframe(){
+    public void switchToIframe() {
         driver.switchTo().frame(productPopUpIframe);
     }
 

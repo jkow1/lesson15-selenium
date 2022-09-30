@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.basic.BasePage;
 
-import java.util.List;
-
 public class ProductPage extends BasePage {
 
     public ProductPage(WebDriver driver) {
@@ -17,25 +15,23 @@ public class ProductPage extends BasePage {
         super(driver, element);
     }
 
-    private List<WebElement> allProductsList;
-
     @FindBy(css = ".quick-view")
     private WebElement quickViewBtn;
 
     @FindBy(css = ".product_img_link")
     private WebElement productImage;
 
-    public ProductPage moveOverProductImage(){
+    public ProductPage moveOverProductImage() {
         moveMouseOver(productImage);
         return this;
     }
 
-    public ProductPage waitToQuickViewBtnVisible(){
+    public ProductPage waitToQuickViewBtnVisible() {
         waitToBeVisible(quickViewBtn);
         return this;
     }
 
-    public ProductPage clickOnQuickViewBtn(){
+    public ProductPage clickOnQuickViewBtn() {
         clickOnBtn(quickViewBtn);
         return this;
     }

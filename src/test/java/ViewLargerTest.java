@@ -9,7 +9,7 @@ import pages.product.ProductPopUpPage;
 public class ViewLargerTest extends TestBase {
 
     @Test
-    public void viewLargerTestWithSuccess(){
+    public void viewLargerTestWithSuccess() {
         TopMenuPage topMenuPage = new TopMenuPage(driver);
         ProductGridPage productGridPage = new ProductGridPage(driver);
         ProductPage productPage = new ProductPage(driver);
@@ -25,10 +25,10 @@ public class ViewLargerTest extends TestBase {
                 .waitToQuickViewBtnVisible()
                 .clickOnQuickViewBtn();
 
-        productPopUpPage.waitToPopUpVisible();
-        productPopUpPage.switchToIframe();
+        productPopUpPage.waitToPopUpVisible()
+                .switchToIframe();
 
-        for(int i=0;i<productPopUpPage.getThumbsImageListSize();i++){
+        for (int i = 0; i < productPopUpPage.getThumbsImageListSize(); i++) {
             productPopUpPage.moveOnProductThumb(i);
             Assertions.assertThat(productPopUpPage.isThisThumbIsDisplayed(i)).isEqualTo(true);
         }
