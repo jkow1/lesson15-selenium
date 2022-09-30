@@ -1,0 +1,11 @@
+browser:
+  browserName: chrome
+  windowMaximized: true
+  windowHeadless: false
+  webElementTimeOut: 15
+
+environment:
+  env1:
+    envName: test
+    active: true
+    appUrl: http://automationpractice.com/
